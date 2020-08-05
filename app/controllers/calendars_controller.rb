@@ -12,6 +12,10 @@ class CalendarsController < ApplicationController
     redirect_to action: :index
   end
 
+  
+
+  private
+
   def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
 
@@ -34,10 +38,8 @@ class CalendarsController < ApplicationController
 
   end
 
-  private
-
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
   end
 
   
